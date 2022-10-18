@@ -10,7 +10,7 @@ import static triangle.Triangle.Type.*;
  * Test class for the Triangle Line Coverage test suite.
  */
 
-// undetectable mutants: 59, [63, 70, 81](a + b > a * b only for negative), 101, 111, 128, 136, 145
+// undetectable mutants: 11, 59, 101, 111, 128, 136, 145
 public class TriangleMutationTest {
 
     @Test
@@ -108,6 +108,27 @@ public class TriangleMutationTest {
     public void mutation80() {
         Type actual = Triangle.classify(9, 8, 2);
         Type expected = SCALENE;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void mutation63() {
+        Type actual = Triangle.classify(100, 50, 150);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void mutation70() {
+        Type actual = Triangle.classify(100, 150, 50);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void mutation81() {
+        Type actual = Triangle.classify(150, 50, 100);
+        Type expected = INVALID;
         assertEquals(actual, expected);
     }
 }
