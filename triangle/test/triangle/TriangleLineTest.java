@@ -12,7 +12,7 @@ import static triangle.Triangle.Type.*;
 public class TriangleLineTest {
 
     @Test
-    public void test1() {
+    public void testEquilateralTriangle() {
         Type actual = Triangle.classify(10, 10, 10);
         Type expected = EQUILATERAL;
         assertEquals(actual, expected);
